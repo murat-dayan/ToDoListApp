@@ -16,6 +16,7 @@ function App(){
   }
 
   const addTask = (index) =>{
+      Keyboard.dismiss()
       let yedekDizi = [...taskList]
       yedekDizi.splice(index , 1)
       setTaskList(yedekDizi)
@@ -56,7 +57,7 @@ function App(){
       >
         <TextInput 
           style={styles.input}
-          placeholder='Görevinizi yazınız...'
+          placeholder='Görevini yazmak için tıkla...'
           placeholderTextColor={'white'}
           value={task}
           onChangeText={ text => setTask(text)}
@@ -89,9 +90,7 @@ const styles = StyleSheet.create({
   header_container:{
     flexDirection:'row',
     margin:10,
-    borderWidth:2,
     padding:10,
-    borderColor:'white',
     alignItems:'center',
     justifyContent:'space-between',
     marginTop:30
@@ -105,14 +104,13 @@ const styles = StyleSheet.create({
 
   keyboard_container:{
     flexDirection:'column',
-    borderWidth:2,
-    borderColor:'white',
     backgroundColor:'gray',
     borderRadius:10
   },
 
   input:{
-    color:'white'
+    color:'white',
+    textAlign:'center'
 
   },
 
@@ -135,8 +133,6 @@ const styles = StyleSheet.create({
     flex:1,
     marginTop:20,
     marginBottom:20,
-    borderWidth:2,
-    borderColor:'white'
   }
 
 
